@@ -132,3 +132,7 @@ dist
 # environment
 .direnv
 .envrc
+
+# ignore build files
+**/*.js
+**/*.d.ts

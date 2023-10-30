@@ -1,12 +1,12 @@
 import { trace } from "./index.js";
 
-async function sample(a, b) {
+async function sample(a: number, b: number) {
   trace({ arguments });
   await inner("hello");
   return a + b;
 }
 
-async function inner(value) {
+async function inner(value: string) {
   trace({ arguments });
   await doubleInner();
   return value;
@@ -14,7 +14,7 @@ async function inner(value) {
 
 async function doubleInner() {
   trace({ arguments });
-  return (resolve) => {
+  return (resolve: TimerHandler) => {
     setTimeout(resolve, 1000);
   };
 }
